@@ -1,50 +1,65 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "myWebAppName": {
-           "type": "string",
-           "metadata": {
-                "description": "WebAppName"
-            }
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.4.1008.15138",
+      "templateHash": "104821603399126558"
+    }
+  },
+  "parameters": {
+    "storageAccountType": {
+      "type": "string",
+      "defaultValue": "Standard_LRS",
+      "allowedValues": [
+        "Premium_LRS",
+        "Premium_ZRS",
+        "Standard_GRS",
+        "Standard_GZRS",
+        "Standard_LRS",
+        "Standard_RAGRS",
+        "Standard_RAGZRS",
+        "Standard_ZRS"
+      ]
     },
-    "variables": {},
-    "resources": [
-        {
-            "name": "[parameters('myWebAppName')]",
-            "type": "Microsoft.Web/sites",
-            "apiVersion": "2016-08-01",
-            "location": "[resourceGroup().location]",
-            "tags": {
-                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/frankdemoplan')]": "Resource",
-                "displayName": "[parameters('myWebAppName')]"
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', 'frankdemoplan')]"
-            ],
-            "properties": {
-                "name": "[parameters('myWebAppName')]",
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'frankdemoplan')]"
-            }
-        },
-        {
-            "name": "frankdemoplan",
-            "type": "Microsoft.Web/serverfarms",
-            "apiVersion": "2018-02-01",
-            "location": "[resourceGroup().location]",
-            "sku": {
-                "name": "F1",
-                "capacity": 1
-            },
-            "tags": {
-                "displayName": "frankdemoplan"
-            },
-            "properties": {
-                "name": "frankdemoplan"
-            }
-        }
-    ],
-    "outputs": {},
-    "functions": []
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    },
+    "storageAccountName": {
+      "type": "string",
+      "defaultValue": "storacct1212",
+      "metadata": {
+        "description": "The name of the Storage Account"
+      }
+    }
+  },
+  "functions": [],
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2021-04-01",
+      "name": "[parameters('storageAccountName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "[parameters('storageAccountType')]"
+      },
+      "kind": "StorageV2",
+      "properties": {}
+    }
+  ],
+  "outputs": {
+    "storageAccountName": {
+      "type": "string",
+      "value": "[parameters('storageAccountName')]"
+    },
+    "storageAccountId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+    }
+  }
 }
