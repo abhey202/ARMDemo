@@ -21,6 +21,10 @@
             }
         }
     },
+    "variables": {
+        "hostingPlanName": "[concat('hpn-', resourceGroup().name)]",
+        "storageAccountid": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+    },
     "resources": [
         {
             "type": "Microsoft.Web/sites",
@@ -29,6 +33,7 @@
             "kind": "functionapp,linux",
             "location": "[parameters('location')]",
             "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
             ],
             "properties": {
@@ -49,6 +54,22 @@
                         }
                     ]
                 },
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+                "clientAffinityEnabled": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2019-08-01",
+            "name": "[variables('hostingPlanName')]",
+            "location": "[parameters('location')]",
+            "kind": "linux",
+            "properties": {
+                "reserved": true
+            },
+            "sku": {
+                "Tier": "Standard",
+                "Name": "S1"
             }
         },
         {
