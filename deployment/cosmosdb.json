@@ -13,9 +13,6 @@
         "locationName": {
             "type": "string",
             "defaultvalue": "East US"
-        },
-        "defaultExperience": {
-            "type": "string"
         }
     },
     "variables": {},
@@ -50,10 +47,6 @@
                 "enableMultipleWriteLocations": false,
                 "capabilities": [],
                 "enableFreeTier": true
-            },
-            "tags": {
-                "defaultExperience": "[parameters('defaultExperience')]",
-                "hidden-cosmos-mmspecial": ""
             }
         }
     ],
