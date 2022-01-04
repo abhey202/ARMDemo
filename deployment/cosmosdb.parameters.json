@@ -1,0 +1,18 @@
+{
+    "$schema":"http://json-schema.org/schema",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "mycosmosdb100p"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "locationName": {
+            "value": "East US"
+        },
+        "defaultExperience": {
+            "value": true
+        }
+    }
+}
