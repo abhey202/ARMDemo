@@ -1,0 +1,36 @@
+{
+    "$schema":"http://json-schema.org/schema",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminUsername": {
+            "value": "myazvm1001"
+        },
+        "adminPassword": {
+            "value": "Mytechvm@2022"
+        },
+        "dnsLabelPrefix": {
+            "value": "myazdnslabel1001"
+        },
+        "publicIpName": {
+            "value": "myPublicIP"
+        },
+        "publicIPAllocationMethod": {
+            "value": "Dynamic"
+        },
+        "publicIpSku": {
+            "value": "Basic"
+        },
+        "OSVersion": {
+            "value": "2019-datacenter-gensecond"
+        },
+        "vmSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "vmName": {
+            "value": "simple-vm"
+        }
+    }
+}
