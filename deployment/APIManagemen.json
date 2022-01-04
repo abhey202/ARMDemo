@@ -11,7 +11,7 @@
   "parameters": {
     "apiManagementServiceName": {
       "type": "string",
-      "defaultValue": "apiservice100p",
+      "defaultValue": "apiservice2000p",
       "metadata": {
         "description": "The name of the API Management service instance"
       }
