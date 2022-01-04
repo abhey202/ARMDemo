@@ -35,7 +35,7 @@
     },
     "storageAccountName": {
       "type": "string",
-      "defaultValue": "mystoracc121oo",
+      "defaultValue": "mystoracc100p",
       "metadata": {
         "description": "The name of the Storage Account"
       }
