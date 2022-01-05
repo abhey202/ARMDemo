@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "logicAppName": {
-            "value": "mylogicapp100p"
+            "value": "mylogicapp200"
         },
         "testUri": {
             "value": "https://status.azure.com/en-us/status/"
