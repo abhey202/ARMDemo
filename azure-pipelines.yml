@@ -23,4 +23,11 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
-  
+
+- task: AzureResourceManagerTemplateDeployment@3
+  displayName: 'ARM Template deployment: Resource Group scope'
+  inputs:
+    azureResourceManagerConnection: 'Visual Studio Professional Subscription (bfe7f0ef-64a4-429c-8146-30faaeba9d4a)'
+    subscriptionId: 'bfe7f0ef-64a4-429c-8146-30faaeba9d4a'
+    resourceGroupName: TestingRG
+    location: 'East US'
