@@ -5,16 +5,16 @@
     "functions": [],
     "variables": {},
     "resources": [
-        // {
-        //     "name": "datalakestore1",
-        //     "type": "Microsoft.DataLakeStore/accounts",
-        //     "apiVersion": "2016-11-01",
-        //     "location": "Central US",
-        //     "properties": {
-        //         "newTier": "Consumption",
-        //         "encryptionState": "Enabled"
-        //     }
-        // },
+        {
+            "name": "datalakestore1",
+            "type": "Microsoft.DataLakeStore/accounts",
+            "apiVersion": "2016-11-01",
+            "location": "Central US",
+            "properties": {
+                "newTier": "Consumption",
+                "encryptionState": "Enabled"
+            }
+        },
         
     ],
     "outputs": {}
