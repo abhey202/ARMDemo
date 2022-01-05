@@ -1,6 +1,12 @@
 {
-    "$schema": "http://json-schema.org/schema",
+    "$schema":"http://json-schema.org/schema",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "adlAnalyticsName": {
+            "value": "myazdatalake100p"
+        },
+        "adlStoreName": {
+            "value": "myazdatalakestore100p"
+        }
     }
 }
