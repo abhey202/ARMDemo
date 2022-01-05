@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "mycosmosdb100p"
+            "value": "mycosmosdb-devenv"
         },
         "location": {
             "value": "eastus"
