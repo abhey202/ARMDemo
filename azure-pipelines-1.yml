@@ -18,6 +18,6 @@ steps:
 
     ScriptPath: 'Deploy-AzureResourceGroup.ps1'
 
-    ScriptArguments: -Location 'eastus' -ResourceGroupName 'TestingRG' -TemplateFile /deployment/webapp.json -ArtificatStagingDirectory deployment
+    ScriptArguments: -Location 'eastus' -ResourceGroupName 'TestingRG' -TemplateFile /deployment/webapp.json -ArtifactStagingDirectory deployment
 
     azurePowerShellVersion: 'LatestVersion'
