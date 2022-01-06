@@ -47,9 +47,9 @@ Write-Host "Using template file:  $TemplateFile"
 
 #try a few different default options for param files when the -dev switch is use
 if ($Dev) {
-    $TemplateParametersFile = $TemplateParametersFile.Replace('webapp.parameters.json', 'webapp.parameters.dev.json')
+    $TemplateParametersFile = $TemplateParametersFile.Replace('/.parameters.json', '/.parameters.dev.json')
     if (!(Test-Path $TemplateParametersFile)) {
-        $TemplateParametersFile = $TemplateParametersFile.Replace('webapp.parameters.dev.json', 'webapp.parameters.1.json')
+        $TemplateParametersFile = $TemplateParametersFile.Replace('/.parameters.dev.json', '/.parameters.1.json')
     }
 }
 
