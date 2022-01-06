@@ -10,8 +10,8 @@ Param(
     [switch] $UploadArtifacts,
     [string] $StorageAccountName,
     [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-    [string] $TemplateFile = $ArtifactStagingDirectory + '\mainTemplate.json',
-    [string] $TemplateParametersFile = $ArtifactStagingDirectory + '.\azuredeploy.parameters.json',
+    [string] $TemplateFile = $ArtifactStagingDirectory + '\webapp.json',
+    [string] $TemplateParametersFile = $ArtifactStagingDirectory + '.\webapp.parameters.json',
     [string] $DSCSourceFolder = $ArtifactStagingDirectory + '.\DSC',
     [switch] $BuildDscPackage,
     [switch] $ValidateOnly,
@@ -40,16 +40,16 @@ $ArtifactStagingDirectory = ($ArtifactStagingDirectory.TrimEnd('/')).TrimEnd('\'
 
 # if the template file isn't found, try the another default
 if (!(Test-Path $TemplateFile)) { 
-    $TemplateFile = $ArtifactStagingDirectory + '\azuredeploy.json'
+    $TemplateFile = $ArtifactStagingDirectory + '\webapp.json'
 }
 
 Write-Host "Using template file:  $TemplateFile"
 
 #try a few different default options for param files when the -dev switch is use
 if ($Dev) {
-    $TemplateParametersFile = $TemplateParametersFile.Replace('azuredeploy.parameters.json', 'azuredeploy.parameters.dev.json')
+    $TemplateParametersFile = $TemplateParametersFile.Replace('webapp.parameters.json', 'webapp.parameters.dev.json')
     if (!(Test-Path $TemplateParametersFile)) {
-        $TemplateParametersFile = $TemplateParametersFile.Replace('azuredeploy.parameters.dev.json', 'azuredeploy.parameters.1.json')
+        $TemplateParametersFile = $TemplateParametersFile.Replace('webapp.parameters.dev.json', 'webapp.parameters.1.json')
     }
 }
 
