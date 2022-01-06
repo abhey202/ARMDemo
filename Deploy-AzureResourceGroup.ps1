@@ -10,8 +10,8 @@ Param(
     [switch] $UploadArtifacts,
     [string] $StorageAccountName,
     [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-    [string] $TemplateFile = $ArtifactStagingDirectory + '\webapp.json',
-    [string] $TemplateParametersFile = $ArtifactStagingDirectory + '.\webapp.parameters.json',
+    [string] $TemplateFile = $ArtifactStagingDirectory + '\logicapp.json',
+    [string] $TemplateParametersFile = $ArtifactStagingDirectory + '.\logicapp.parameters.json',
     [string] $DSCSourceFolder = $ArtifactStagingDirectory + '.\DSC',
     [switch] $BuildDscPackage,
     [switch] $ValidateOnly,
@@ -40,7 +40,7 @@ $ArtifactStagingDirectory = ($ArtifactStagingDirectory.TrimEnd('/')).TrimEnd('\'
 
 # if the template file isn't found, try the another default
 if (!(Test-Path $TemplateFile)) { 
-    $TemplateFile = $ArtifactStagingDirectory + '\webapp.json'
+    $TemplateFile = $ArtifactStagingDirectory + '\logicapp.json'
 }
 
 Write-Host "Using template file:  $TemplateFile"
