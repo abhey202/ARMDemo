@@ -41,16 +41,16 @@ $ArtifactStagingDirectory = ($ArtifactStagingDirectory.TrimEnd('/')).TrimEnd('\'
 
 # if the template file isn't found, try the another default
 if (!(Test-Path $TemplateFile)) { 
-    $TemplateFile = $ArtifactStagingDirectory + '\.json'
+    $TemplateFile = $ArtifactStagingDirectory + '\webapp.json'
 }
 
 Write-Host "Using template file:  $TemplateFile"
 
 #try a few different default options for param files when the -dev switch is use
 if ($Dev) {
-    $TemplateParametersFile = $TemplateParametersFile.Replace('\.parameters.json', '\.parameters.dev.json')
+    $TemplateParametersFile = $TemplateParametersFile.Replace('/.parameters.json', '/.parameters.dev.json')
     if (!(Test-Path $TemplateParametersFile)) {
-        $TemplateParametersFile = $TemplateParametersFile.Replace('\.parameters.dev.json', '\.parameters.1.json')
+        $TemplateParametersFile = $TemplateParametersFile.Replace('/.parameters.dev.json', '/.parameters.1.json')
     }
 }
 
