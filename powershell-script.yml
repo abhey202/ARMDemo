@@ -12,12 +12,12 @@ steps:
 
   inputs:
 
-    azureSubscription: 'Visual Studio Professional Subscription (bfe7f0ef-64a4-429c-8146-30faaeba9d4a)'
+    azureSubscription: 'Visual Studio Professional Subscription (45f1f18d-50d9-474b-b9b4-87ebc0642c9f)'
 
     ScriptType: 'FilePath'
 
     ScriptPath: 'Deploy-AzureResourceGroup.ps1'
 
-    ScriptArguments: -Location 'eastus' -ResourceGroupName 'TestingRG' -TemplateFile /deployment/webapp.json -ArtifactStagingDirectory deployment
+    ScriptArguments: -Location 'eastus' -ResourceGroupName 'myResourceGroup' -TemplateFile /deployment/webapp.json -ArtifactStagingDirectory deployment
 
     azurePowerShellVersion: 'LatestVersion'
