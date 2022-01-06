@@ -40,7 +40,7 @@ $ArtifactStagingDirectory = ($ArtifactStagingDirectory.TrimEnd('/')).TrimEnd('\'
 
 # if the template file isn't found, try the another default
 if (!(Test-Path $TemplateFile)) { 
-    $TemplateFile = $ArtifactStagingDirectory + '\.json'
+    $TemplateFile = $ArtifactStagingDirectory + '\webapp.json'
 }
 
 Write-Host "Using template file:  $TemplateFile"
