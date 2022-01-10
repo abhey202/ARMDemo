@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppName": {
-            "value": "mywebapp-10jan20"
+            "value": "mywebapp-10jan"
         },
         "location": {
             "value": "eastus"
