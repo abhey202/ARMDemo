@@ -5,7 +5,8 @@ trigger:
 pool:
 
   vmImage: 'windows-2022'
-
+  environment: Dev
+  
 steps:
 
 - task: AzurePowerShell@3

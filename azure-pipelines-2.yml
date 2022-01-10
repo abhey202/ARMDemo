@@ -1,0 +1,41 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+# creates an environment if it doesn't exist
+environment: 'Dev'
+strategy:
+  runOnce:
+    deploy:
+      steps:
+      - script: echo Hello world
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+    
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Visual Studio Professional Subscription (bfe7f0ef-64a4-429c-8146-30faaeba9d4a)'
+    subscriptionId: 'bfe7f0ef-64a4-429c-8146-30faaeba9d4a'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'TestingRG'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    csmFile: '$(System.DefaultWorkingDirectory)/_abhey202_ARMDemo/deployment/webapp.json'
+    csmParametersFile: '$(System.DefaultWorkingDirectory)/_abhey202_ARMDemo/deployment/webapp.parameters.json'
+    deploymentMode: 'Validation'
+    deploymentName: 'Dev'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
