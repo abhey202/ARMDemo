@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "keyVaultName": {
+            "value": "azkeyvault101"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "enabledForDeployment": {
+            "value": false
+        },
+        "enabledForDiskEncryption": {
+            "value": false
+        },
+        "enabledForTemplateDeployment": {
+            "value": false
+        },
+        "tenantId": {
+            "value": "tenantazkeyvault101"
+        },
+        "objectId": {
+            "value": "objectazkeyvault101"
+        },
+        "keysPermissions": {
+            "value": [
+              "list"
+            ]
+        },
+        "secretsPermissions": {
+            "value": [
+              "list"
+            ]
+        },
+        "skuName": {
+            "value": "standard"
+        },
+        "secretName": {
+            "value": "secretazkeyvault101"
+        },
+        "secretValue": {
+            "value": "secretvalue101"
+        }
+    }
+}
