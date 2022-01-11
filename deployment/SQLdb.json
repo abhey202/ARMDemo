@@ -1,0 +1,72 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sqlServerName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of SQL Server"
+            },
+            "defaultValue": "SQLdbserv101"
+        },
+        "sqlDatabaseName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of SQL Database"
+            },
+            "defaultValue": "SQLdb101"
+        },
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "location of all resources"
+            },
+            "defaultValue": "eastus"
+        },
+        "adminUsername": {
+            "type": "string",
+            "metadata": {
+                "description": "username for SQL Server"
+            },
+            "defaultValue": "user9876"
+        },
+        "adminPassword": {
+            "type": "string",
+            "metadata": {
+                "description": "password for SQL Server"
+            },
+            "defaultValue": "PaSs9706"
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "[parameters('sqlServerName')]",
+            "type": "Microsoft.Sql/servers",
+            "apiVersion": "2014-04-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "administratorLogin": "[parameters('adminUsername')]",
+                "administratorLoginPassword": "[parameters('adminPassword')]"
+            }
+        },
+        {
+                    "name": "[concat(parameters('sqlServerName'),'/',parameters('sqlDatabaseName'))]",
+                    "type": "Microsoft.Sql/servers/databases",
+                    "apiVersion": "2014-04-01",
+                    "location": "[parameters('location')]",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Sql/servers', parameters('sqlServerName'))]"
+                    ],
+                    "properties": {
+                        "collation": "SQL_Latin1_General_CP1_CI_AS",
+                        "edition": "Basic",
+                        "maxSizeBytes": "1073741824",
+                        "requestedServiceObjectiveName": "Basic"
+                    }
+                    
+        }
+    ],
+    "outputs": {}
+}
