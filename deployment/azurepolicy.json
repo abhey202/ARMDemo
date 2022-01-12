@@ -2,14 +2,13 @@
     "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "variables": {
-        "policyName": "restrict-allowed-locations-policy",
         "policyDisplayName": "Restrict allowed locations for resources",
         "policyDescription": "This policy restrict the locations you can specify when deploying resources. Excludes resource groups, Microsoft.AzureActiveDirectory/b2cDirectories, and resources that use the 'global' region."
     },
     "resources": [
         {
             "type": "Microsoft.Authorization/policyDefinitions",
-            "name": "[variables('policyName')]",
+            "name": "azpolicy1001",
             "apiVersion": "2021-06-01",
             "properties": {
                 "displayName": "[variables('policyDisplayName')]",
