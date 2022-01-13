@@ -8,7 +8,7 @@
     "resources": [
         {
             "type": "Microsoft.Authorization/policyDefinitions",
-            "name": "azpolicy1001",
+            "name": "AzurePolicy2022",
             "apiVersion": "2021-06-01",
             "properties": {
                 "displayName": "[variables('policyDisplayName')]",
