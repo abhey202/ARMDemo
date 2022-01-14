@@ -1,54 +1,68 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "variables": {
-        "policyDisplayName": "Restrict allowed locations for resources",
-        "policyDescription": "This policy restrict the locations you can specify when deploying resources. Excludes resource groups, Microsoft.AzureActiveDirectory/b2cDirectories, and resources that use the 'global' region."
+    "parameters": {
+        "policyDefinitionName": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Policy definition name",
+                "description": "Name of the policy to assign."
+            },
+            "defaultValue":"e765b5de-1225-4ba3-bd56-1ac6695af988"
+        },
+        "policyAssignmentName": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Policy assignment name",
+                "description": "Name to use for a specific policy assignment."
+            },
+            "defaultValue":"test policy"
+        },
+        "resourceGroupName": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Resource group to limit policy assignment scope",
+                "description": "Optional resource group name to limit the policy scope.",
+                "strongType": "existingResourceGroups"
+            },
+            "defaultValue": "rgp-test"
+        },
+        "policyAssignmentMode": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Policy assignment mode",
+                "description": "Enforced (default) or disabled."
+            },
+            "allowedValues": [
+                "Default",
+                "DoNotEnforce"
+            ],
+            "defaultValue": "Default"
+        },
+        "policyParameters": {
+            "type": "object",
+            "metadata": {
+                "displayName": "Policy parameters",
+                "description": "Policy parameters as an object parameter type."
+            },
+            "defaultValue": {
+            "allowedLocations": [
+                "West US",
+                "East US"
+                 ]
+            }
+        }
     },
     "resources": [
         {
-            "type": "Microsoft.Authorization/policyDefinitions",
-            "name": "AzurePolicy2022",
-            "apiVersion": "2021-06-01",
+            "type": "Microsoft.Authorization/policyAssignments",
+            "name": "[parameters('policyAssignmentName')]",
+            "apiVersion": "2019-09-01",
             "properties": {
-                "displayName": "[variables('policyDisplayName')]",
-                "policyType": "Custom",
-                "description": "[variables('policyDescription')]",
-                "metadata": {
-                    "category": "General"
-                },
-                "mode": "All",
-                "parameters": {
-                    "allowedLocations": {
-                        "type": "Array",
-                        "metadata": {
-                            "displayName": "Allowed locations",
-                            "description": "The list of locations that can be specified when deploying resources.",
-                            "strongType": "location"
-                        }
-                    }
-                },
-                "policyRule": {
-                    "if": {
-                        "allOf": [
-                            {
-                                "field": "location",
-                                "notIn": "[[parameters('allowedLocations')]" //Use an additional left bracket here, so the function is not invoked in the ARM template itself
-                            },
-                            {
-                                "field": "location",
-                                "notEquals": "global"
-                            },
-                            {
-                                "field": "type",
-                                "notEquals": "Microsoft.AzureActiveDirectory/b2cDirectories"
-                            }
-                        ]
-                    },
-                    "then": {
-                        "effect": "Deny"
-                    }
-                }
+                "scope": "[if(empty(parameters('resourceGroupName')), subscription().id, concat(subscription().id, '/resourceGroups/', parameters('resourceGroupName')))]",
+                "enforcementMode": "[parameters('policyAssignmentMode')]",
+                "policyDefinitionId": "[concat(subscription().id, '/providers/Microsoft.Authorization/policyDefinitions/', parameters('policyDefinitionName'))]",
+                "parameters": "[parameters('policyParameters')]"
             }
         }
     ]
