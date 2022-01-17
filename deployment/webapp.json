@@ -4,7 +4,7 @@
     "parameters": {
         "webAppName": {
             "type": "string",
-            "defaultValue": "mywebapp-10jan",
+            "defaultValue": "mywebapp-17jan2022",
             "metadata": {
                 "description": "That name is the name of our application. It has to be unique. Type a name followed by your resource group name. (<name>-<resourceGroupName>)"
             }
