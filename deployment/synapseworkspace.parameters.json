@@ -1,0 +1,81 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "synawork18jan"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "defaultDataLakeStorageAccountName": {
+            "value": "datalakesynawork18jan"
+        },
+        "defaultDataLakeStorageFilesystemName": {
+            "value": "datalakesynawork18jan2"
+        },
+        "sqlAdministratorLogin": {
+            "value": "user18jan"
+        },
+        "sqlAdministratorLoginPassword": {
+            "value": "Tech@2022asdf"
+        },
+        "setWorkspaceIdentityRbacOnStorageAccount": {
+            "value": false 
+        },
+        "allowAllConnections": {
+            "value": true
+        },
+        "grantWorkspaceIdentityControlForSql": {
+            "value": ""
+        },
+        "managedVirtualNetwork": {
+            "value": ""
+        },
+        "tagValues": {
+            "value": {}
+        },
+        "storageSubscriptionID": {
+            "value": ""
+        },
+        "storageResourceGroupName": {
+            "value": ""
+        },
+        "storageLocation": {
+            "value": "eastus"
+        },
+        "storageRoleUniqueId": {
+            "value": ""
+        },
+        "isNewStorageAccount": {
+            "value": false
+        },
+        "isNewFileSystemOnly": {
+            "value": false
+        },
+        "adlaResourceId": {
+            "value": ""
+        },
+        "storageAccessTier": {
+            "value": ""
+        },
+        "storageAccountType": {
+            "value": ""
+        },
+        "storageSupportsHttpsTrafficOnly": {
+            "value": false
+        },
+        "storageKind": {
+            "value": ""
+        },
+        "storageIsHnsEnabled": {
+            "value": false
+        },
+        "userObjectId": {
+            "value": ""
+        },
+        "setSbdcRbacOnStorageAccount": {
+            "value": false
+        }
+    }
+}
