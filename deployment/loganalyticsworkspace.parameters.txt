@@ -6,7 +6,7 @@
       "value": "MyWorkspace18jan"
     },
     "sku": {
-      "value": "Free"
+      "value": "pergb2018"
     },
     "location": {
       "value": "eastus"
