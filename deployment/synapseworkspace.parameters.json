@@ -1,33 +1,36 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "$schema": "http://json-schema.org/schema",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "synawork18jan"
+            "value": "synapworksp"
         },
         "location": {
             "value": "eastus"
         },
         "defaultDataLakeStorageAccountName": {
-            "value": "datalakesynawork18jan"
+            "value": "synapdatalake22"
         },
         "defaultDataLakeStorageFilesystemName": {
-            "value": "datalakesynawork18jan2"
+            "value": "synapfilesys"
         },
         "sqlAdministratorLogin": {
-            "value": "user18jan"
+            "value": "sqladminuser"
         },
         "sqlAdministratorLoginPassword": {
-            "value": "Tech@2022asdf"
+            "value": null
         },
         "setWorkspaceIdentityRbacOnStorageAccount": {
-            "value": false 
+            "value": true
+        },
+        "createManagedPrivateEndpoint": {
+            "value": false
+        },
+        "defaultAdlsGen2AccountResourceId": {
+            "value": "/subscriptions/bfe7f0ef-64a4-429c-8146-30faaeba9d4a/resourceGroups/TestingRG/providers/Microsoft.Storage/storageAccounts/synapdatalake22"
         },
         "allowAllConnections": {
             "value": true
-        },
-        "grantWorkspaceIdentityControlForSql": {
-            "value": ""
         },
         "managedVirtualNetwork": {
             "value": ""
@@ -36,19 +39,19 @@
             "value": {}
         },
         "storageSubscriptionID": {
-            "value": ""
+            "value": "bfe7f0ef-64a4-429c-8146-30faaeba9d4a"
         },
         "storageResourceGroupName": {
-            "value": ""
+            "value": "TestingRG"
         },
         "storageLocation": {
             "value": "eastus"
         },
         "storageRoleUniqueId": {
-            "value": ""
+            "value": "464da7b5-1cae-4f67-8b18-c2dc2cc33012"
         },
         "isNewStorageAccount": {
-            "value": false
+            "value": true
         },
         "isNewFileSystemOnly": {
             "value": false
@@ -56,26 +59,38 @@
         "adlaResourceId": {
             "value": ""
         },
-        "storageAccessTier": {
+        "managedResourceGroupName": {
             "value": ""
+        },
+        "storageAccessTier": {
+            "value": "Hot"
         },
         "storageAccountType": {
-            "value": ""
+            "value": "Standard_RAGRS"
         },
         "storageSupportsHttpsTrafficOnly": {
-            "value": false
+            "value": true
         },
         "storageKind": {
-            "value": ""
+            "value": "StorageV2"
+        },
+        "minimumTlsVersion": {
+            "value": "TLS1_2"
         },
         "storageIsHnsEnabled": {
-            "value": false
+            "value": true
         },
         "userObjectId": {
-            "value": ""
+            "value": "8b6ff687-727e-47e8-ab37-8bf9393583df"
         },
         "setSbdcRbacOnStorageAccount": {
+            "value": true
+        },
+        "setWorkspaceMsiByPassOnStorageAccount": {
             "value": false
+        },
+        "workspaceStorageAccountProperties": {
+            "value": {}
         }
     }
 }
