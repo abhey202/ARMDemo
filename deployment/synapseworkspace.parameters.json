@@ -27,7 +27,7 @@
             "value": false
         },
         "defaultAdlsGen2AccountResourceId": {
-            "value": "/subscriptions/bfe7f0ef-64a4-429c-8146-30faaeba9d4a/resourceGroups/TestingRG/providers/Microsoft.Storage/storageAccounts/synapdatalake22"
+            "value": "/subscriptions/bfe7f0ef-64a4-429c-8146-30faaeba9d4a/resourceGroups/TestingRG/providers/Microsoft.Storage/storageAccounts/synapseanaly22"
         },
         "allowAllConnections": {
             "value": true
