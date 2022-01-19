@@ -18,7 +18,7 @@
             "value": "sqladminuser"
         },
         "sqlAdministratorLoginPassword": {
-            "value": null
+            "value": "Tech@2022"
         },
         "setWorkspaceIdentityRbacOnStorageAccount": {
             "value": true
