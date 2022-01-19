@@ -64,11 +64,11 @@
         },
         "isNewStorageAccount": {
             "type": "bool",
-            "defaultValue": false
+            "defaultValue": true
         },
         "isNewFileSystemOnly": {
             "type": "bool",
-            "defaultValue": false
+            "defaultValue": true
         },
         "adlaResourceId": {
             "type": "string",
@@ -224,7 +224,7 @@
                     "resources": [
                         {
                             "type": "Microsoft.Storage/storageAccounts",
-                            "apiVersion": "2021-01-01",
+                            "apiVersion": "2015-06-15",
                             "location": "[parameters('storageLocation')]",
                             "name": "[parameters('defaultDataLakeStorageAccountName')]",
                             "properties": "[parameters('workspaceStorageAccountProperties')]"
@@ -283,7 +283,7 @@
                         {
                             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
                             "name": "[concat(parameters('defaultDataLakeStorageAccountName'), '/default/', parameters('defaultDataLakeStorageFilesystemName'))]",
-                            "apiVersion": "2021-01-01",
+                            "apiVersion": "2018-02-01",
                             "properties": {
                                 "publicAccess": "None"
                             }
