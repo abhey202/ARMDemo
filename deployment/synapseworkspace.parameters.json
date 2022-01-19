@@ -9,7 +9,7 @@
             "value": "eastus"
         },
         "defaultDataLakeStorageAccountName": {
-            "value": "synapdatalake22"
+            "value": "stg1003200177fab9ee"
         },
         "defaultDataLakeStorageFilesystemName": {
             "value": "synapfilesys"
