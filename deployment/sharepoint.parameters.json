@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "dnsLabelPrefix": {
+      "value": "testusersp"
+    },
+    "adminUserName": {
+      "value": "testuser"
+    },
+    "adminPassword": {
+      "value": "Testuser12"
+    },
+    "serviceAccountsPassword": {
+      "value": "Testuser12"
+    }
+  }
+}
