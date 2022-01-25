@@ -6,7 +6,7 @@
             "value": "my-data-lake-25jan"
         },
         "adlStoreName": {
-            "value": "my-data-lake-25jan"
+            "value": "datalakeacc"
         }
     }
 }
