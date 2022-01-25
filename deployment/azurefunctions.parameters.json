@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appName": {
+            "value": "myazfunctions25jan"
+        },
+        "storageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "appInsightsLocation": {
+            "value": "eastus"
+        },
+        "runtime": {
+            "value": "node"
+        }
+    }
+}
