@@ -1,18 +1,78 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "dnsLabelPrefix": {
-      "value": "testusersp"
-    },
-    "adminUserName": {
-      "value": "testuser"
-    },
-    "adminPassword": {
-      "value": "Testuser12"
-    },
-    "serviceAccountsPassword": {
-      "value": "Testuser12"
+    "$schema": "http://json-schema.org/schema",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus"
+        },
+        "sharePointVersion": {
+            "value": "Subscription"
+        },
+        "dnsLabelPrefix": {
+            "value": "mydnslabel25jan"
+        },
+        "domainFQDN": {
+            "value": "contoso.local"
+        },
+        "numberOfAdditionalFrontEnd": {
+            "value": 0
+        },
+        "addAzureBastion": {
+            "value": false
+        },
+        "addPublicIPAddressToEachVM": {
+            "value": true
+        },
+        "RDPTrafficAllowed": {
+            "value": "No"
+        },
+        "adminUserName": {
+            "value": "azuser25jan"
+        },
+        "adminPassword": {
+            "value": "Tech@2022az"
+        },
+        "serviceAccountsPassword": {
+            "value": "Tech@2022az"
+        },
+        "vmsTimeZone": {
+            "value": "Romance Standard Time"
+        },
+        "vmsAutoShutdownTime": {
+            "value": "1900"
+        },
+        "enableAutomaticUpdates": {
+            "value": true
+        },
+        "enableHybridBenefitServerLicenses": {
+            "value": false
+        },
+        "sharePointDataDiskSize": {
+            "value": 0
+        },
+        "vmDCSize": {
+            "value": "Standard_B2s"
+        },
+        "vmDCStorageAccountType": {
+            "value": "StandardSSD_LRS"
+        },
+        "vmSQLSize": {
+            "value": "Standard_B2ms"
+        },
+        "vmSQLStorageAccountType": {
+            "value": "StandardSSD_LRS"
+        },
+        "vmSPSize": {
+            "value": "Standard_B4ms"
+        },
+        "vmSPStorageAccountType": {
+            "value": "StandardSSD_LRS"
+        },
+        "_artifactsLocation": {
+            "value": "eastus"
+        },
+        "_artifactsLocationSasToken": {
+            "value": "eastus"
+        }
     }
-  }
 }
