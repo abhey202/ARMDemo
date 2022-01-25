@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "adlAnalyticsName": {
-            "value": "myazdatalake100p"
+            "value": "my-data-lake-25jan"
         },
         "adlStoreName": {
-            "value": "myazdatalakestore100p"
+            "value": "my-data-lake-25jan"
         }
     }
 }
