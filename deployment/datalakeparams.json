@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "adlAnalyticsName": {
-            "value": "my-data-lake-25jan"
+            "value": "mydatalake25jan"
         },
         "adlStoreName": {
             "value": "datalakeacc"
