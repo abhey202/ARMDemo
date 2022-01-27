@@ -4,14 +4,14 @@
   "parameters": {
     "adlAnalyticsName": {
       "type": "string",
-      "defaultValue": "myazdatalake100p",
+      "defaultValue": "datalake4dev",
       "metadata": {
         "description": "The name of the Data Lake Analytics account to create."
       }
     },
     "adlStoreName": {
       "type": "string",
-      "defaultValue": "myazdatalakestore100p",
+      "defaultValue": "datalakeaccstorage",
       "metadata": {
         "description": "The name of the Data Lake Store account to create."
       }
