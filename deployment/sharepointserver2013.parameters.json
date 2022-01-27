@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sharepointFarmName": {
+            "value": "spfarm"
+        },
+        "location": {
+            "value": "eastus2"
+        },
+        "virtualNetworkName": {
+            "value": "spfarmvnet"
+        },
+        "virtualNetworkAddressRange": {
+            "value": "10.0.0.0/16"
+        },
+        "adSubnet": {
+            "value": "10.0.0.0/24"
+        },
+        "sqlSubnet": {
+            "value": "10.0.1.0/24"
+        },
+        "spSubnet": {
+            "value": "10.0.2.0/24"
+        },
+        "adNicIPAddress": {
+            "value": "10.0.0.4"
+        },
+        "adminUsername": {
+            "value": "splogin"
+        },
+        "adminPassword": {
+            "value": "Tech@2022server"
+        },
+        "adVMSize": {
+            "value": "Standard_DS2"
+        },
+        "sqlVMSize": {
+            "value": "Standard_DS3"
+        },
+        "spVMSize": {
+            "value": "Standard_DS3"
+        },
+        "domainName": {
+            "value": "contoso.com"
+        },
+        "sqlServerServiceAccountUserName": {
+            "value": "sqlservice"
+        },
+        "sqlServerServiceAccountPassword": {
+            "value": "Tech@2022server"
+        },
+        "sharePointSetupUserAccountUserName": {
+            "value": "sp_setup"
+        },
+        "sharePointSetupUserAccountPassword": {
+            "value": "Tech@2022server"
+        },
+        "sharePointFarmAccountUserName": {
+            "value": "sp_farm"
+        },
+        "sharePointFarmAccountPassword": {
+            "value": "Tech@2022server"
+        },
+        "sharePointFarmPassphrasePassword": {
+            "value": null
+        },
+        "spSiteTemplateName": {
+            "value": "STS#1"
+        },
+        "spDNSPrefix": {
+            "value": "share2013"
+        },
+        "spPublicIPNewOrExisting": {
+            "value": "new"
+        },
+        "spPublicIPRGName": {
+            "value": "sharepointserverRG"
+        },
+        "sppublicIPAddressName": {
+            "value": "ip01"
+        }
+    }
+}
