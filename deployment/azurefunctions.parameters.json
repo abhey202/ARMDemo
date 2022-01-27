@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "appName": {
-            "value": "myazfunctions25jan"
+            "value": "4dev"
         },
         "storageAccountType": {
             "value": "Standard_LRS"
