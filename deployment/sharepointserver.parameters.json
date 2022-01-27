@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus2"
+        },
+        "sharePointFarmSoftwarePlanName": {
+            "value": "single"
+        },
+        "sharePointFarmName": {
+            "value": "spfarm"
+        },
+        "timeZone": {
+            "value": "UTC"
+        },
+        "storageAccountNamePrefix": {
+            "value": "sharepointaccstore"
+        },
+        "storageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "adminUsername": {
+            "value": "splogin"
+        },
+        "adminPassword": {
+            "value": "Tech@2022server"
+        },
+        "virtualNetworkName": {
+            "value": "spfarmvnet"
+        },
+        "adVMSize": {
+            "value": "Standard_DS2_v2"
+        },
+        "spVMSize": {
+            "value": "Standard_DS3_v2"
+        },
+        "domainName": {
+            "value": "contoso.com"
+        },
+        "dnsPrefix": {
+            "value": "share2019"
+        },
+        "spWebIPRGName": {
+            "value": "sharepointserverRG"
+        },
+        "spWebIPAddressName": {
+            "value": "ip01"
+        },
+        "spWebIPNewOrExisting": {
+            "value": "new"
+        },
+        "sqlMIAdminPassword": {
+            "value": "Tech@2022server"
+        },
+        "sharePointSetupUserAccountPassword": {
+            "value": "Tech@2022server"
+        },
+        "sharePointFarmAccountPassword": {
+            "value": "Tech@2022server"
+        },
+        "sharePointServiceAccountPassword": {
+            "value": "Tech@2022server"
+        },
+        "sharePointFarmPassphrasePassword": {
+            "value": "Tech@2022server"
+        },
+        "spSiteTemplateName": {
+            "value": "SITEPAGEPUBLISHING#0"
+        },
+        "spServiceApplicationList": {
+            "value": "falsenonononononononononononono"
+        }
+    }
+}
