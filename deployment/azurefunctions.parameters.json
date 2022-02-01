@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "appName": {
-            "value": "function1feb2022"
+            "value": "function1feb2022zz"
         },
         "storageAccountType": {
             "value": "Standard_LRS"
