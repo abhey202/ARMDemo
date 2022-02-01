@@ -3,15 +3,12 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "appName": {
-            "value": "function31jan"
+            "value": "function1feb"
         },
         "storageAccountType": {
             "value": "Standard_LRS"
         },
         "location": {
-            "value": "eastus"
-        },
-        "appInsightsLocation": {
             "value": "eastus"
         },
         "runtime": {
