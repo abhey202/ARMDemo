@@ -34,7 +34,7 @@
   },
   "variables": {
     "functionAppName": "[parameters('appName')]",
-    "storageAccountName": "azfunctions101",
+    "storageAccountName": "azfunctions101zz",
     "functionWorkerRuntime": "[parameters('runtime')]"
   },
   "resources": [
